@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    triggers { upstream/cron/pollscm}
+    parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+    stages {
+        stage('checckout') {
+            steps {
+                echo 'checkout code from repo'
+            }
+        }
+         stage('build') {
+            steps {
+                echo 'build code maven/gradle/msbuild...'
+                //integrate security scans e.g. sonarqube
+                sh "mvn clean verify sonar:sonar -Dsonar.login=myAuthenticationToken"
+            }
+        }
+        stage('publish') {
+            steps {
+                echo 'publish to artifatory'
+            }
+        }
+    }
+
+    post { 
+        always { 
+            echo "clean workspace"
+        }
+        failure {
+            echo "notify slack channel/email stakeholders"
+        }
+    }
+}
