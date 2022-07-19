@@ -1,6 +1,4 @@
 # aiqdemo
-### Architecture: 
-![Architecture](https://drive.google.com/file/d/1xOIWOCYv0T8YHQg2Q0i-42iazDgmL3OG/view?usp=sharing)
 
 ### Folder structure
 ```
