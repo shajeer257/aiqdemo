@@ -8,7 +8,14 @@ resource "kubernetes_namespace" "monitoring" {
 
 resource "helm_release" "app1"{
     name ="app1"
-    chart = "./chart"
+    chart = "../charts/svc1"
+}
+
+resource "helm_release" "ambassador" {
+  chart      = "ambassador"
+  name       = "ambassador"
+  namespace  = var.namespace
+  repository = "stable/ambassador"
 }
 
 resource "helm_release" "prometheus" {

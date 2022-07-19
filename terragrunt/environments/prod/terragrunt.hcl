@@ -22,7 +22,7 @@ generate "backend" {
     contents = <<-EOF
     terraform {
         backend "remote" {
-            organization = "pablosspot"
+            organization = "shajeer"
             workspaces {
                 prefix = "${local.workspace.locals.workspace_prefix}"
             }

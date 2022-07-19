@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -x
 #install git
 apt-get update && apt-get install -y git
 
