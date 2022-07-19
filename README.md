@@ -3,7 +3,7 @@
 ![Architecture](https://drive.google.com/file/d/1xOIWOCYv0T8YHQg2Q0i-42iazDgmL3OG/view?usp=sharing)
 
 ### Folder structure
-.
+```
 ├── README.md
 ├── ansible
 │   └── manage-nodes-role
@@ -77,7 +77,7 @@
         ├── test
         │   └── terragrunt.hcl
         └── workspace.hcl
-
+```
 
 ### Reference:
 - https://anywhere.eks.amazonaws.com/
